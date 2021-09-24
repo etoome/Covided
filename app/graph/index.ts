@@ -1,3 +1,4 @@
+import { GraphData } from "../schema/Graph";
 import {
   EvolutionOfHospitalisedPeople,
   ProportionOfHospitalisedPeopleOnFirstJanuary,
@@ -26,7 +27,7 @@ function getDates(startDate: Date, stopDate: Date) {
 
 export function getProportionOfHospitalisedPeopleOnFirstJanuaryGraphDatas(
   resProportionOfHospitalisedPeopleOnFirstJanuary: ProportionOfHospitalisedPeopleOnFirstJanuary[]
-) {
+): GraphData {
   const labels: string[] = [];
   const data: number[] = [];
   const backgroundColor: string[] = [];
@@ -55,7 +56,7 @@ export function getProportionOfHospitalisedPeopleOnFirstJanuaryGraphDatas(
 
 export function getEvolutionOfHospitalisedPeopleGraphDatas(
   fetchEvolutionOfHospitalisedPeople: EvolutionOfHospitalisedPeople[]
-) {
+): GraphData {
   const countries: any[] = [];
   let minDate: Date = new Date();
   let maxDate: Date = new Date(-8640000000000000);

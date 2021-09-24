@@ -16,13 +16,14 @@ import {
   getEvolutionOfHospitalisedPeopleGraphDatas,
   getProportionOfHospitalisedPeopleOnFirstJanuaryGraphDatas,
 } from "../graph/index";
+import { GraphData } from "../schema/Graph";
 
 interface Data {
   countriesWith5000HospitalisedPeople: CountriesWith5000HospitalisedPeople[];
   countryWithMostVaccines: CountryWithMostVaccines[];
   vaccinesUsedByCountries: [];
-  proportionHospitalisedPeople: [];
-  evolutionOfHospitalisedPeople: [];
+  proportionHospitalisedPeople: GraphData;
+  evolutionOfHospitalisedPeople: GraphData;
   vaccineAvailableForFranceAndBelgium: VaccineAvailableForFranceAndBelgium[];
 }
 
@@ -89,12 +90,12 @@ const Dashboard = ({
         )}
         {proportionHospitalisedPeople && (
           <div className="w-full h-auto">
-            {/* <Bar type="bar" data={proportionHospitalisedPeople} /> */}
+            <Bar data={proportionHospitalisedPeople} />
           </div>
         )}
         {evolutionOfHospitalisedPeople && (
           <div className="w-full h-auto">
-            {/* <Bar type="bar" data={evolutionOfHospitalisedPeople} /> */}
+            <Bar data={evolutionOfHospitalisedPeople} />
           </div>
         )}
         {vaccineAvailableForFranceAndBelgium && (
