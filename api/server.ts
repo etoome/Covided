@@ -29,9 +29,9 @@ class Server {
     this.app.use(cookieParser());
     this.app.use(
       cors({
-        // origin: process.env.APP_URL,
-        // methods: "GET,POST",
-        // credentials: true,
+        origin: process.env.APP_URL,
+        methods: "GET,POST",
+        credentials: true,
       })
     );
     this.app.use(helmet());

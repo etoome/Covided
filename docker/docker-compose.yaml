@@ -13,6 +13,7 @@ services:
 
   api:
     container_name: covided_api
+    image: covided_api
     build:
       context: ../api
       dockerfile: Dockerfile
@@ -20,7 +21,7 @@ services:
     depends_on:
       - db
     environment:
-      PORT: 4000
+      PORT: 80
       APP_URL: http://localhost:3000
       POSTGRES_HOST: db # Name of container
       POSTGRES_PORT: 5432
@@ -34,6 +35,7 @@ services:
 
   app:
     container_name: covided_app
+    image: covided_app
     build:
       context: ../app
       dockerfile: Dockerfile
