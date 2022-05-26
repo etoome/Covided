@@ -20,8 +20,10 @@ services:
     restart: always
     depends_on:
       - db
+    ports:
+      - "3001:3001"
     environment:
-      PORT: 80
+      PORT: 3001
       APP_URL: http://localhost:3000
       POSTGRES_HOST: db # Name of container
       POSTGRES_PORT: 5432
