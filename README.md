@@ -9,8 +9,14 @@
 <div align="center">
   <img width="325" src="https://github.com/etoome/covided/blob/main/screenshots/login.png">
   <img width="325" src="https://github.com/etoome/covided/blob/main/screenshots/register.png">
-  <img width="325" src="https://github.com/etoome/covided/blob/main/screenshots/request.png">
+</div>
+
+<div align="center">
   <img width="325" src="https://github.com/etoome/covided/blob/main/screenshots/dashboard.png">
+</div>
+
+<div align="center">
+  <img width="325" src="https://github.com/etoome/covided/blob/main/screenshots/request.png">
 </div>
 
 # Development
