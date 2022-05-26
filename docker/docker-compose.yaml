@@ -7,7 +7,7 @@ services:
     volumes:
       - ./static/db.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      POSTGRES_DB: covidh303
+      POSTGRES_DB: covided
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
 
@@ -33,7 +33,7 @@ services:
       POSTGRES_PRIVATE_PASSWORD: password
       POSTGRES_API_USER: postgres_api
       POSTGRES_API_PASSWORD: password
-      POSTGRES_DB: covidh303
+      POSTGRES_DB: covided
 
   app:
     container_name: covided_app
