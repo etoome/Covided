@@ -34,12 +34,12 @@ const Layout = ({ children }: Props) => {
 
         <footer>
           <div className="flex justify-center p-2">
-            <Link href="https://progiciel.be">
+            <Link href="https://etoome.com">
               <a
                 target="_blank"
                 className="text-gray-500 hover:text-gray-600 font-semibold text-sm"
               >
-                Progiciel © 2021
+                etoome © 2021
               </a>
             </Link>
           </div>
