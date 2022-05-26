@@ -413,11 +413,14 @@ def build_split_vaccine_table(filename, sql, iso_codes):
 if __name__ == "__main__":
 
     with open('docker/static/db.sql', 'w') as sql:
-        build_climate_table('data/climate.csv', sql)
-        iso_codes = build_country_table('data/country.csv', sql)
+        build_climate_table('docker/static/data/climate.csv', sql)
+        iso_codes = build_country_table('docker/static/data/country.csv', sql)
         build_provider_table(sql)
-        build_vaccination_table('data/vaccinations.csv', sql, iso_codes)
-        build_hospital_table('data/hospitals.csv', sql, iso_codes)
-        build_split_vaccine_table('data/producers.csv', sql, iso_codes)
+        build_vaccination_table(
+            'docker/static/data/vaccinations.csv', sql, iso_codes)
+        build_hospital_table(
+            'docker/static/data/hospitals.csv', sql, iso_codes)
+        build_split_vaccine_table(
+            'docker/static/data/producers.csv', sql, iso_codes)
         create_permissions(sql)
         create_triggers(sql)
