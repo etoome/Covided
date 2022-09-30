@@ -1,0 +1,48 @@
+version: "3"
+services:
+  db:
+    container_name: covided_db
+    image: "postgres:latest"
+    restart: always
+    volumes:
+      - ./static/db.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_DB: covided
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+
+  api:
+    container_name: covided_api
+    image: covided_api
+    build:
+      context: ../api
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      APP_URL: http://localhost:3000
+      POSTGRES_HOST: db # Name of container
+      POSTGRES_PORT: 5432
+      POSTGRES_PUBLIC_USER: postgres_public
+      POSTGRES_PUBLIC_PASSWORD: password
+      POSTGRES_PRIVATE_USER: postgres_private
+      POSTGRES_PRIVATE_PASSWORD: password
+      POSTGRES_API_USER: postgres_api
+      POSTGRES_API_PASSWORD: password
+      POSTGRES_DB: covided
+
+  app:
+    container_name: covided_app
+    image: covided_app
+    build:
+      context: ../app
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
