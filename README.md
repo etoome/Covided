@@ -38,6 +38,6 @@ docker-compose -f docker/docker-compose.yaml up
 Go to http://localhost:3000
 
 ## Authors
-* **[etoome](https://github.com/etoome)**
-* **[Arenash13](https://github.com/Arenash13)**
-* **[sebaarte](https://github.com/sebaarte)**
+* **[etoome](https://github.com/etoome)**: front, back 
+* **[Arenash13](https://github.com/Arenash13)**: back
+* **[sebaarte](https://github.com/sebaarte)**: SQL
